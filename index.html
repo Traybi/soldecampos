@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camposol - Próximamente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 50%, #6b9d3e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Efecto de textura de campo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 2px, 
+                    rgba(255,255,255,0.03) 2px, 
+                    rgba(255,255,255,0.03) 4px);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 40px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 8rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .mensaje {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            font-style: italic;
+            opacity: 0.85;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hojas flotantes decorativas */
+        .hoja {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.2;
+            animation: flotar 15s infinite ease-in-out;
+        }
+
+        .hoja:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .hoja:nth-child(2) {
+            top: 70%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .hoja:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        .hoja:nth-child(4) {
+            top: 30%;
+            right: 25%;
+            animation-delay: 9s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        .linea {
+            width: 200px;
+            height: 3px;
+            background: white;
+            margin: 30px auto;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .mensaje {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hoja">🌾</div>
+    <div class="hoja">🌿</div>
+    <div class="hoja">🌾</div>
+    <div class="hoja">🌿</div>
+
+    <div class="container">
+        <h1>CAMPOSOL</h1>
+        <div class="linea"></div>
+        <div class="subtitle">Próximamente</div>
+        <p class="mensaje">Algo grande está creciendo...</p>
+    </div>
+</body>
+</html>
